@@ -5,11 +5,51 @@ body{
     
     overflow-x: hidden;
 }
+
+.articles{
+    display: block;
+    position: absolute;
+    transform: translateY(150%);
+    height: 100%;
+    width: 100vw;
+    background: #3c31dd;
+}
+.articles h1{
+    text-align: center;
+    color: #e7e3e3;
+    font-size: 48px;
+    font-family: 'M PLUS Rounded 1c', sans-serif; 
+   
+}
+.circle2{
+    height: 40%;
+    width: 52.5%;
+    
+    
+    background: #3c31dd;
+    border-radius: 100% 50%;
+   position: absolute;
+   display: block;
+   bottom: 0;
+   right: 0;
+   transform: translateY(50%) translateX(-0.5%);
+    rotate: 1800deg;
+}
+.circle{
+    height: 40%;
+    width: 55%;
+    
+    
+    background: #0c0c0c;
+    border-radius: 100% 50%;
+    transform: translateY(-50%) translateX(-10%) ;
+    rotate: 0deg;
+}
 .roadmapPage{
     width: 100vw;
     display: block;
     position: absolute;
-    height: 100vh;
+    height: 150vh;
     z-index: 2;
     background: #0c0c0c;
     
