@@ -5,12 +5,26 @@ body{
     
     overflow-x: hidden;
 }
+h3{
+    font-size: 20px !important;
+}
+.articleList{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+.col:nth-child(2){
+    transition-delay: 200ms;
 
+}
+.col:nth-child(3){
+    transition-delay: 400ms;
+}
 .articles{
     display: block;
     position: absolute;
-    transform: translateY(150%);
-    height: 100%;
+    transform: translateY(80%);
+    height: 150vh;
     width: 100vw;
     background: #3c31dd;
 }
@@ -22,7 +36,7 @@ body{
    
 }
 .circle2{
-    height: 40%;
+    height: 40vh;
     width: 52.5%;
     
     
@@ -36,7 +50,7 @@ body{
     rotate: 1800deg;
 }
 .circle{
-    height: 40%;
+    height: 40vh;
     width: 55%;
     
     
@@ -49,11 +63,12 @@ body{
     width: 100vw;
     display: block;
     position: absolute;
-    height: 150vh;
+    height: 120vh;
     z-index: 2;
     background: #0c0c0c;
     
 }
+
 .underline{
     width: 0%;
     
