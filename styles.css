@@ -23,8 +23,8 @@ h3{
 .articles{
     display: block;
     position: absolute;
-    transform: translateY(80%);
-    height: 150vh;
+    transform: translateY(75%);
+    height: 160vh;
     width: 100vw;
     background: #3c31dd;
 }
@@ -35,18 +35,22 @@ h3{
     font-family: 'M PLUS Rounded 1c', sans-serif; 
    
 }
+.ukrain{
+    width: 100vw;
+    height:20vh;
+    background: #FDD400 ;
+    transform: translateY(250vh);
+}
 .circle2{
     height: 40vh;
-    width: 52.5%;
-    
-    
+    width: 52.5%; 
     background: #3c31dd;
     border-radius: 100% 50%;
    position: absolute;
    display: block;
    bottom: 0;
    right: 0;
-   transform: translateY(50%) translateX(-0.5%);
+   transform: translateY(50%) translateX(1.45%);
     rotate: 1800deg;
 }
 .circle{
@@ -56,7 +60,7 @@ h3{
     
     background: #0c0c0c;
     border-radius: 100% 50%;
-    transform: translateY(-50%) translateX(-10%) ;
+    transform: translateY(-40%) translateX(-10%) ;
     rotate: 0deg;
 }
 .roadmapPage{
@@ -119,6 +123,14 @@ h3{
     opacity: 0;
     transition: all 1s;
 }
+
+  
+  .earth {
+    width: 100%;
+    height: 500px;
+  max-width:100%;
+  }
+  
 .show{
     opacity: 1;
     filter: blur(0);
