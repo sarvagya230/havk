@@ -1,3 +1,6 @@
+document.querySelector('body').style.overflow="hidden"
+var loader=document.querySelector('.loadingPage')
+loader.style.opacity="1"
 const observer=new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         if(entry.isIntersecting){
@@ -27,18 +30,42 @@ if(navigator.geolocation){
        
         chart.deltaLongitude=-pos.coords.longitude;
         chart.deltaLatitude = -pos.coords.latitude;
-        le
+        console.log(pos.coords.longitude)
+        
        polygonSeries.data.forEach((e)=>{
             if(e.id==="IN"){
                 console.log(e)
             }
         })
 
-    })
+    },()=>
+{    console.log("yo")
+fetch('https://api.ipregistry.co/2401:4900:3b36:b3d2:85fd:ced6:e2:660?key=nnym2r91gi242170')
+    .then(function (response) {
+       let ipdata=response.json().then((data) =>{
+        console.log("Success")
+        document.querySelector('.main').style.opacity="1";loader.style.opacity="0";document.querySelector('body').style.overflowY="visible";chart.deltaLatitude=-data.location.latitude;chart.deltaLongitude=-data.location.longitude})
+       
+       fetch('./country-codes.json',(data)=>{
+        
+       })
+    }).catch(error => {console.log(error)})
+   
+   ;})
         
 
    
 
+
+}
+else{
+    fetch('https://api.ipregistry.co/2401:4900:3b36:b3d2:85fd:ced6:e2:660?key=nnym2r91gi242170')
+    .then(function (response) {
+       let ipdata=response.json()
+       fetch('./country-codes.json',(data)=>{
+        console.log(ipdata,data)
+       })
+    })
 }
 
 chart.geodata = am4geodata_worldLow;

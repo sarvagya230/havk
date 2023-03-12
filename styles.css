@@ -206,6 +206,25 @@ h3{
 
     color: #575757;
 }
+.loadingPage{
+    width: 100vw;
+    height: 100vh;
+    background: #3c31dd;
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    opacity:1;
+}
+.loader{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 .LandingHeading{
     
     color: #ece9e9;
