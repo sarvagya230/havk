@@ -1,3 +1,22 @@
+const questions=[{
+    "question":"what is obama's last name?",
+    "answer":0,
+    "options":["A) I dont know","B) American","C) President","D) Nigga"],
+}]
+let element=document.querySelectorAll('.option')
+document.querySelector('.question').innerHTML=questions[0]["question"]
+element.forEach((el,index)=>{
+ 
+    el.addEventListener('click',()=>{
+        if(questions[0]["answer"]==index){
+            el.style.background="#187330"
+        }
+        else{
+            el.style.background="#8f312e"
+        }
+    })
+    el.children[0].innerHTML=questions[0]["options"][index]
+})
 document.querySelector('body').style.overflow="hidden"
 var loader=document.querySelector('.loadingPage')
 loader.style.opacity="1"
