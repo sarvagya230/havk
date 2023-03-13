@@ -1,22 +1,95 @@
 const questions=[{
-    "question":"what is obama's last name?",
+    "question":"Which of the following is NOT a common method of social engineering? ",
+    "answer":2,
+    "options":["A)Phishing","B)Shoulder surfing","C)Malware injection","D)Spear phishing"],
+},{"question":"What is the term used to describe the practice of using multiple authentication methods to access a system?,",
+"answer":0,
+"options":["A.  Multifactor authentication", 
+   " B.Single-factor authentication",
+   " C. Biometric authentication",
+   " D.  None of the above"],},{
+    "question":"What is the term used to describe the practice of hiding data within other data?",
+    "answer":1,
+    "options":["a. Encryption","b. Steganography","c. Authentication","d. Authorization"],
+   },{
+    "question":"Which of the following is a type of attack that involves intercepting and altering communications between two parties",
+    "answer":3,
+    "options":["a. Phishing","b. Malware","c. Distributed denial of service (DDoS)","d.  Man-in-the-middle (MitM) attack "],
+   },{
+    "question":"What is the term used to describe the practice of accessing a system or network without authorization?",
     "answer":0,
-    "options":["A) I dont know","B) American","C) President","D) Nigga"],
-}]
+    "options":["a. Hacking","b.Phishing","c.Social engineering","d.Malware"],
+   },{
+    "question":"What is the term used to describe a malicious software that is designed to damage, disrupt, or gain unauthorized access to a system or network?",
+    "answer":3,
+    "options":["a. Virus","b. Worm","c. Trojan","d.All of the above"],
+   },{
+    "question":"Which of the following is a technique used to prevent unauthorized access to a system or network by blocking certain types of traffic?",
+    "answer":0,
+    "options":["a.Firewall","b.Antivirus","c. Encryption","d.Intrusion detection system (IDS)"],
+   },{
+    "question":"What is the term used to describe the practice of verifying the identity of a user or device before allowing access to a system or network?",
+    "answer":0,
+    "options":["a. Authentication","b. Authorization","c. Encryption","d. Steganography"],
+   },{
+    "question":"What is the term used to describe a type of attack in which an attacker gains access to a system or network by exploiting a vulnerability that has not yet been patched?",
+    "answer":1,
+    "options":["a.Social engineering","b.Zero-day exploit","c. Cross-site scripting (XSS)","d. SQL injection"],
+   },{
+    "question":"What is the term used to describe a type of attack in which an attacker gains access to a system or network by exploiting a vulnerability that has not yet been patched?",
+    "answer":1,
+    "options":["a. Encryption","b. Digital signature","c. Hash function","d. Symmetric key"],
+
+   }]
+
+let questionNumber=0
+document.querySelectorAll('.number').forEach((el,index)=>{
+    el.style.background="#1b1b1b"
+    el.addEventListener("click",(e)=>{
+        document.querySelectorAll('.number').forEach((ele,index)=>{
+            ele.style.background="#1b1b1b"})
+        el.style.background="#1D1370"
+
+        questionNumber=index
+        set()
+    })
+})
+document.querySelectorAll('.number')[0].style.background="#1D1370"
+set()
+function pop(element){
+    let opa=0
+    element.style.opacity=opa
+    setInterval(()=>{
+        if(opa<1){
+            opa+=0.5
+            element.style.opacity=opa
+
+        }
+
+    },0.5)
+
+}
+function set(){
 let element=document.querySelectorAll('.option')
-document.querySelector('.question').innerHTML=questions[0]["question"]
+pop(document.querySelector('.question'))
+document.querySelector('.question').innerHTML=questions[questionNumber]["question"]
 element.forEach((el,index)=>{
- 
+    el.style.background="rgba(27, 27, 27,0.7)"
+})
+element.forEach((el,index)=>{
+    pop(el)
     el.addEventListener('click',()=>{
-        if(questions[0]["answer"]==index){
+        if(questions[questionNumber]["answer"]==index){
+            
             el.style.background="#187330"
         }
         else{
             el.style.background="#8f312e"
         }
     })
-    el.children[0].innerHTML=questions[0]["options"][index]
+    el.children[0].innerHTML=questions[questionNumber]["options"][index]
 })
+}
 document.querySelector('body').style.overflow="hidden"
 var loader=document.querySelector('.loadingPage')
 loader.style.opacity="1"
