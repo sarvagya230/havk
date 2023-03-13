@@ -43,24 +43,24 @@ h3{
 }
 .circle2{
     height: 40vh;
-    width: 52.5%; 
+    width: 52%; 
     background: #3c31dd;
     border-radius: 100% 50%;
    position: absolute;
    display: block;
    bottom: 0;
    right: 0;
-   transform: translateY(50%) translateX(2.5%);
+   transform: translateY(50%) translateX(7.5%);
     rotate: 1800deg;
 }
 .circle{
     height: 40vh;
-    width: 55%;
+    width: 58.5%;
     
     
     background: #0c0c0c;
     border-radius: 100% 50%;
-    transform: translateY(20%) translateX(-10%) ;
+    transform: translateY(20%) translateX(-9.5%) ;
     rotate: 0deg;
 }
 .roadmapPage{
