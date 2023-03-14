@@ -129,6 +129,7 @@ if(navigator.geolocation){
                 console.log(e)
             }
         })
+        document.querySelector('.main').style.opacity="1";loader.style.opacity="0";document.querySelector('body').style.overflowY="visible"
 
     },()=>
 {    console.log("yo")
@@ -158,6 +159,7 @@ else{
         console.log(ipdata,data)
        })
     })
+    document.querySelector('.main').style.opacity="1";loader.style.opacity="0";document.querySelector('body').style.overflowY="visible"
 }
 
 chart.geodata = am4geodata_worldLow;

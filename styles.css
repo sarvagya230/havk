@@ -35,12 +35,6 @@ h3{
     font-family: 'M PLUS Rounded 1c', sans-serif; 
    
 }
-.ukrain{
-    width: 100vw;
-    height:20vh;
-    background: #FDD400 ;
-    transform: translateY(250vh);
-}
 .circle2{
     height: 40vh;
     width: 52%; 
@@ -54,7 +48,7 @@ h3{
     rotate: 1800deg;
 }
 .circle{
-    height: 40vh;
+    height: 39vh;
     width: 58.5%;
     
     
@@ -269,7 +263,7 @@ h3{
     z-index:3 ;
     left: 0px;
     width: 100vw;
-    background: #000000;
+    background: rgb(12, 12, 12);
     height: 70px;
     position: fixed;
     color: #FFF;
@@ -284,8 +278,7 @@ h3{
     height: 100vh;
     background: #3c31dd;
     display: block;
-    position: absolute;
-    top:0;
+    position: absolute;;
     right: 0;
     opacity:1;
 }
