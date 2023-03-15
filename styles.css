@@ -9,9 +9,12 @@ h3{
     font-size: 20px !important;
 }
 .articleList{
+    margin-top: 10%;
     position: absolute;
     display: flex;
+    width: 100%;
     flex-direction: row;
+    justify-content: center;
 }
 .col:nth-child(2){
     transition-delay: 200ms;
