@@ -16,6 +16,7 @@
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/maps.js"></script>
     <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script type="text/javascript" src="./csvjson.json"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
 </head>
@@ -53,23 +54,30 @@
     </div>
   <div class="main" style="opacity: 0;" >
     <div>
-    <div class="navbar">
+    <div class="navbar" style="background: rgb(14, 14, 14);position: fixed;">
        
         <div class="navel">
             <h2  style="font-weight: 300;color: #ececec;">HAVK</h2>
             <div>
-            <nav>
+              <nav class="pages" >
                 <ul>
-                    <li><a  href="#" >Home</a></li>
-                    <li><a href="./aboutus.html">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                  <li><a href="./aboutus.html">About Us</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            <nav class="scroll">
+                <ul>
+                    <li class="1"><a  href="#" >Home</a></li>
+                    <li class="2"><a  href="#" >Quiz</a></li>
+                    <li class="3"><a  href="#" >Articles</a></li>
+                   
                 </ul>
             </nav>
         </div>
         </div>
         
     </div>
-    <section class="landing">
+    <section class="landing page " id="page1">
         <div class="LandingText">
        
             <h1 class="LandingHeading" >What is ethical hacking?</h1>
@@ -88,7 +96,7 @@
     <div class="earth"></div>
     </section>
 
-<section class="roadmapPage">
+<section class="roadmapPage page " id="page2">
     <h1  >Let's check your knowledge</h1>
     <br>
     <div class="numbers">
@@ -151,7 +159,7 @@
     <div class="circle2" ></div>     
 </section>
 
-<section class="articles">
+<section class="articles page " id="page3">
     <div class="circle " ></div>
     <h1 >Articles</h1>
     <div class="articleList">
@@ -187,7 +195,28 @@
           </div>
           
           </div>
+          
     </div>
+</section>
+<section class="codeEditor">
+  <h1>The following code is vulnerable to </h1>
+  <div class="editor">
+    <div class="editor__wrapper">
+        <div class="editor__body">
+            <div id="editorCode" class="editor__code">
+            </div>
+        </div>
+    
+    </div>
+    <div class="codeOptions">
+<div><h3 style="color: #ececec;">Sensitive data exposure</h3></div>
+<div><h3 style="color: #ececec;">cross-site scripting</h3></div>
+<div><h3 style="color: #ececec;">Unvalidated Redirects and Forwards</h3></div>
+</div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+
+  <script src="main.js"></script>
 </section>
 </div>
 <footer class="section bg-footer">
@@ -235,18 +264,18 @@
     
       <table >
         <tr>
-          <td>Emil</td>
-          <td>Tobias</td>
+          <td>Computers Infected with at Least One web  Malware Attack:    </td>
+          <td class="web-malware">    No Data</td>
          
         </tr>
           <tr>
-          <td>Emil</td>
-          <td>Tobias</td>
+          <td>Computers Facing at Least One Local Malware Attack:</td>
+          <td class="malware">No Data</td>
         
         </tr>
           <tr>
-          <td>Emil</td>
-          <td>Tobias</td>
+          <td>All Spam Emails by Originating Country (Yearly):</td>
+          <td class="spam-email-data">No Data</td>
         </tr>
       </table>
     </div>

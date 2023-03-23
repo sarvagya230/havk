@@ -1,20 +1,33 @@
+
+window.scrollTo(0, 0);
+document.body.scrollTop=0
 let country;
 document.querySelector('.model').style.opacity=0
+document.querySelector('body').style.overflowY="hidden"
 console.log("yo")
 fetch('https://api.ipregistry.co/2401:4900:3b36:b3d2:85fd:ced6:e2:660?key=nnym2r91gi242170')
     .then(function (response) {
        let ipdata=response.json().then((data) =>{
+        fetch('./csvjson.json').then((data) =>{data.json().then((e)=>{
+           e.forEach((countri)=>{
+            if (countri["Country"]===country){
+                document.querySelector('.web-malware').innerHTML=`${countri["% of Computers Infected with at Least One Malware Attack (Web-Based)"]}%`
+                document.querySelector('.malware').innerHTML=`${countri["% of Computers Facing at Least One Local Malware Attack"]}%`
+                document.querySelector('.spam-email-data').innerHTML=`${countri["% of all Spam Emails by Originating Country (Yearly)"]}%`
+            }
+           })
+        })})
+
         country= data.location.country.name
+        
         document.querySelector('.countryText').innerHTML=`cyber crime rate in ${country}`
-        document.querySelector('.main').style.opacity="1";loader.style.opacity="0";document.querySelector('body').style.overflowY="visible";chart.deltaLatitude=-data.location.latitude;chart.deltaLongitude=-data.location.longitude;setTimeout(()=>{
+        document.querySelector('.main').style.opacity="1";loader.style.opacity="0";chart.deltaLatitude=-data.location.latitude;chart.deltaLongitude=-data.location.longitude;setTimeout(()=>{
             let opacity=0;
             let interval=setInterval(()=>{
                 document.querySelector('.model').style.opacity=opacity;opacity+=0.1;if(opacity==1){clearInterval(interval)}},1)
                },100)})
        
-       fetch('./country-codes.json',(data)=>{
-        
-       })
+      
     }).catch(error => {console.log(error)})
 const questions=[{
     "question":"Which of the following is NOT a common method of social engineering? ",
@@ -59,7 +72,15 @@ const questions=[{
     "options":["a. Encryption","b. Digital signature","c. Hash function","d. Symmetric key"],
 
    }]
+document.querySelectorAll('.pages').forEach((el)=>{
+    el.childNodes.forEach((elP)=>{elP.childNodes.forEach((lis)=>{
+        console.log(lis.tagName)
+    if(lis.tagName==="LI"){
+        lis.style.background="transparent"
 
+    }
+    })})
+})
 let questionNumber=0
 document.querySelectorAll('.number').forEach((el,index)=>{
     el.style.background="#1b1b1b"
@@ -122,7 +143,27 @@ const observer=new IntersectionObserver((entries)=>{
 
     })
 })
+const observerPage=new IntersectionObserver((en)=>{
+   en.forEach((entry)=>{
+    if(entry.isIntersecting){
+        
+    document.querySelectorAll('.page').forEach((el)=>{
+        let id=el.getAttribute('id')
+        console.log()
+        console.log(document.querySelector('.scroll').children[0].childNodes.forEach((el)=>{if(el.nodeName==="LI"){
+          if(el.getAttribute("id")===id.split('')[4]){
+            document.getElementById(id.split('')[4]).style.background="red"
+          }
+        }}))
+    })
+        
+    }
+   })
+})
 
+const pages=document.querySelectorAll('.page').forEach((el)=>{
+    observerPage.observe(el)
+})
 const hidenEL=document.querySelectorAll('.hidden')
 hidenEL.forEach((el)=>{observer.observe(el)})
 console.log(hidenEL)
@@ -170,6 +211,7 @@ window.addEventListener('click', function(e){
   });
 document.querySelector('.cross').addEventListener("click",()=>{modelClose()})  
 function modelClose(){
+    document.querySelector('body').style.overflowY="visible"
     document.querySelector('.model').remove()
 
   }
