@@ -5,7 +5,7 @@ let country;
 document.querySelector('.model').style.opacity=0
 document.querySelector('body').style.overflowY="hidden"
 console.log("yo")
-fetch('https://api.ipregistry.co/2401:4900:3b36:b3d2:85fd:ced6:e2:660?key=nnym2r91gi242170')
+fetch('https://api.ipregistry.co/?key=nnym2r91gi242170')
     .then(function (response) {
        let ipdata=response.json().then((data) =>{
         fetch('./csvjson.json').then((data) =>{data.json().then((e)=>{
