@@ -1,9 +1,13 @@
 const express = require('express')
 const cheerio = require('cheerio')
 const axios =require('axios')
+const cors = require('cors');
 let articles=""
 const app = express()
 const port = process.env.PORT ||5001
+app.use(cors({
+    origin: '*'
+}));
 async function scrappe(){
 
     axios.get('https://cyware.com/cyber-security-news-articles') 
