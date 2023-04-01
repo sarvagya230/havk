@@ -1,10 +1,78 @@
 
-window.scrollTo(0, 0);
+document.querySelectorAll('.codeOption').forEach((el,index)=>{el.addEventListener('click',()=>{if(index==1){el.style.background="green"}else{el.style.background="red"}})})
+let burger
+let navbar
+let cross
+let created=false
+let navcreated=false
+const interval = setInterval(function() {
+    const width  = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+
+    if(width<=700){
+    document.querySelector('.navel div').style.display="none"
+    document.querySelector('.LandingText h3').setAttribute ('style', 'font-size: 15px !important;');
+    burger=document.createElement('img')
+    burger.setAttribute('src', './burger.svg')
+    burger.setAttribute('class','burger-menu')
+if(navcreated==false)
+{
+    navcreated=true
+    navbar=document.createElement('div')
+     navbar.setAttribute('class','navbar-inner')
+     document.querySelector('body').appendChild(navbar)
+   
+  }  cross=document.createElement('img')
+    cross.setAttribute('src', './xicon.svg')
+    burger.addEventListener('click',()=>{
+      
+        navbar.classList.add('clicked')
+    })
+    cross.setAttribute('class','xicon'
+      
+     )
+     cross.addEventListener('click',()=>{
+        navbar.classList.remove('clicked')
+        navbar.remove()
+        navcreated=false
+        
+
+     })
+    navbar.appendChild(cross)
+    
+   
+   
+   
+    
+    if(created==false){
+    document.querySelector('.navel ').appendChild(burger)
+    created=true
+    }
+    }
+    else{
+        created=false
+        document.querySelector('.navel div').style.display="flex"
+       if( document.querySelector('.burger-menu'))
+        document.querySelector('.burger-menu').remove()
+    document.querySelector('.LandingText h3').setAttribute ('style', 'font-size: 20px !important;');
+
+    }
+  }, 100);
+ 
 document.body.scrollTop=0
 let country;
 document.querySelector('.model').style.opacity=0
 document.querySelector('body').style.overflowY="hidden"
-console.log("yo")
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".navbar").style.top = "0";
+  } else {
+    document.querySelector(".navbar").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 fetch('https://api.ipregistry.co/?key=nnym2r91gi242170')
     .then(function (response) {
        let ipdata=response.json().then((data) =>{
@@ -24,8 +92,9 @@ fetch('https://api.ipregistry.co/?key=nnym2r91gi242170')
         document.querySelector('.main').style.opacity="1";loader.style.opacity="0";chart.deltaLatitude=-data.location.latitude;chart.deltaLongitude=-data.location.longitude;setTimeout(()=>{
             let opacity=0;
             let interval=setInterval(()=>{
-                document.querySelector('.model').style.opacity=opacity;opacity+=0.1;if(opacity==1){clearInterval(interval)}},1)
-               },100)})
+                if(document.querySelector('.model')){
+                document.querySelector('.model').style.opacity=opacity;opacity+=0.1;if(opacity==1){clearInterval(interval)}}},1)
+               },100)})   
        
       
     }).catch(error => {console.log(error)})
@@ -167,6 +236,10 @@ const pages=document.querySelectorAll('.page').forEach((el)=>{
 const hidenEL=document.querySelectorAll('.hidden')
 hidenEL.forEach((el)=>{observer.observe(el)})
 console.log(hidenEL)
+
+
+
+
 am4core.useTheme(am4themes_animated);
 var chart = am4core.create("earth", am4maps.MapChart);
 var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());

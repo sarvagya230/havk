@@ -18,6 +18,37 @@ section{
 h3{
     font-size: 20px !important;
 }
+.navbar-inner{
+   
+    width: 50vw;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 50;
+    transform: translateX(50vw);
+    background-color: rgb(17, 17, 17) !important;
+    transition: all 0.4s ease-in;
+}
+.navbar-inner{
+    transform: translateX(50vw);
+
+}
+.navbar-inner.clicked{
+    transform: translateX(0vw);
+}
+.navbar-inner.clickeddnt{
+    transform: translateX(50vw);
+}
+.xicon{
+    display: block;
+    position: absolute;
+    top: 20px;;
+    width: 30px;
+    height: 30px;
+    right: 30px;
+}
 .articleList{
     margin-top: 10%;
     position: absolute;
@@ -49,7 +80,7 @@ h3{
    
 }
 .circle2{
-    height: 40vh;
+    height: 35vh;
     width: 52%; 
     background: #3c31dd;
     border-radius: 100% 50%;
@@ -57,12 +88,12 @@ h3{
    display: block;
    bottom: 0;
    right: 0;
-   transform: translateY(50%) translateX(7.5%);
+   transform: translateY(50%) translateX(8.5%);
     rotate: 1800deg;
 }
 .circle{
-    height: 39vh;
-    width: 58.5%;
+    height: 35vh;
+    width: 59.5%;
     
     
     background: #0c0c0c;
@@ -273,22 +304,33 @@ align-items: center;
 }
 .navel div{
     width: 90%;
-    height: 100%;
+    height: 20%;
     display: flex;
     justify-content: end;
     align-items: center;
     
 }
+.navel img{
+    display: block;
+    position: fixed;
+    right: 30px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    z-index: 60
+}
 .navel{
     width: 100%;
-    height: 100%;
+    height: 10%;
     display: flex;
     position: fixed;
     align-items: center;
+    z-index: 10;
 }
 .navbar{
     display: block;
     
+  transition: top 0.3s;
     background: #0c0c0c;
     position: fixed;
     display: block;
@@ -409,6 +451,8 @@ table{
     color: #e7e3e3;
 }
 .data-div{
+    position: absolute;
+    top:20px;
     height: 70%;
     border-radius: 1em;
     width: 40%;
@@ -551,6 +595,17 @@ h3.question {
     width: 1px;
     height: 1px;
     background: transparent;
+}
+@media only screen and (max-width: 600px) {
+    .quizBox{
+        width: 100vw;
+    }   
+    .data-div{
+        width: 100vw;
+    } 
+    .codeOptions  div h3{
+      font-size: medium;
+    }
 }
 @keyframes underlines1{
     to{

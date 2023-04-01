@@ -26,11 +26,11 @@ async function scrappe(){
     articles=dataArray.toString()
     });
 }
-scrappe()
+setInterval(scrappe,10000)
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 })
-app.get('/message', (req, res) => {
+app.get('/', (req, res) => {
     res.json({ articles: articles });
 });
