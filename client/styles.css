@@ -31,9 +31,22 @@ h3{
     background-color: rgb(17, 17, 17) !important;
     transition: all 0.4s ease-in;
 }
-.navbar-inner{
-    transform: translateX(50vw);
 
+.aboutText{
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.navbar-inner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(50vw);
+   
+
+}
+.navbar-inner h1{
+    margin-top: 20%;
 }
 .navbar-inner.clicked{
     transform: translateX(0vw);

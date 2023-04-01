@@ -15,11 +15,26 @@ document.body.clientWidth;
     burger=document.createElement('img')
     burger.setAttribute('src', './burger.svg')
     burger.setAttribute('class','burger-menu')
+
 if(navcreated==false)
 {
     navcreated=true
     navbar=document.createElement('div')
      navbar.setAttribute('class','navbar-inner')
+     let about=document.createElement('h1')
+     about.setAttribute('class','aboutText')
+     about.innerText="About Us"
+    navbar.appendChild(about) 
+    about.addEventListener('click',()=>{
+        window.location.href="./aboutus.html"
+    })
+    let news=document.createElement('h1')
+    news.setAttribute('class','aboutText')
+    news.innerText="News"
+    news.addEventListener('click',()=>{
+        window.location.href="./news.html"
+    })
+    navbar.appendChild(news)
      document.querySelector('body').appendChild(navbar)
    
   }  cross=document.createElement('img')
