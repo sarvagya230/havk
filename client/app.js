@@ -267,8 +267,9 @@ polygonTemplate.stroke = am4core.color("#000");
 
 chart.geodata = am4geodata_worldLow;
 chart.projection = new am4maps.projections.Orthographic();
-chart.panBehavior = "rotateLongLat";
-
+chart.maxZoomLevel = 1;
+chart.seriesContainer.draggable = false;
+chart.seriesContainer.resizable = false;
 var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
 graticuleSeries.mapLines.template.line.stroke = am4core.color("#0af");
 graticuleSeries.mapLines.template.line.strokeOpacity = 0.08;

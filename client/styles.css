@@ -13,7 +13,7 @@ body{
     overflow-x: hidden;
 }
 section{
-    width: 100vw;
+    width: 100%;
 }
 h3{
     font-size: 20px !important;
@@ -80,7 +80,7 @@ h3{
 .articles{
     display: block;
     position: absolute;
-    transform: translateY(87%);
+    transform: translateY(88%);
     height: 160vh;
     width: 100vw;
     background: #3c31dd;
@@ -101,7 +101,7 @@ h3{
    display: block;
    bottom: 0;
    right: 0;
-   transform: translateY(50%) translateX(8.5%);
+   transform: translateY(50%) translateX(9%);
     rotate: 1800deg;
 }
 .circle{
